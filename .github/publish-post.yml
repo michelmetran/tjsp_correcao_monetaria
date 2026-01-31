@@ -2,8 +2,7 @@ name: publish
 
 on:
   push:
-    branches: [ main ]
-
+    branches: [main]
 
 jobs:
   build_1_post:
@@ -11,21 +10,20 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Pushes POST to another repository
-        id: push_directory        
+        id: push_directory
         uses: cpina/github-action-push-to-another-repository@v1.4.1
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: 'docs/post'
+          source-directory: "docs/post"
           user-name: michelmetran
           user-email: michelmetran@gmail.com
 
-          destination-github-username: 'gaemapiracicaba'
-          destination-repository-name: 'gaemapiracicaba.github.io'
+          destination-github-username: "gaemapiracicaba"
+          destination-repository-name: "gaemapiracicaba.github.io"
           target-branch: master
           target-directory: /_posts/correcao_monetaria
-          commit-message: See ORIGIN_COMMIT from $GITHUB_REF   
-
+          commit-message: See ORIGIN_COMMIT from $GITHUB_REF
 
   build_2_imgs:
     runs-on: ubuntu-latest
@@ -40,16 +38,15 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: 'docs/imgs'
+          source-directory: "docs/imgs"
           user-name: michelmetran
           user-email: michelmetran@gmail.com
 
-          destination-github-username: 'gaemapiracicaba'
-          destination-repository-name: 'gaemapiracicaba.github.io'
+          destination-github-username: "gaemapiracicaba"
+          destination-repository-name: "gaemapiracicaba.github.io"
           target-branch: master
           target-directory: /assets/correcao_monetaria/imgs
           commit-message: See ORIGIN_COMMIT from $GITHUB_REF
-
 
   build_3_data:
     runs-on: ubuntu-latest
@@ -64,12 +61,12 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: 'tjsp/data'
+          source-directory: "tjsp/data"
           user-name: michelmetran
           user-email: michelmetran@gmail.com
 
-          destination-github-username: 'gaemapiracicaba'
-          destination-repository-name: 'gaemapiracicaba.github.io'
+          destination-github-username: "gaemapiracicaba"
+          destination-repository-name: "gaemapiracicaba.github.io"
           target-branch: master
           target-directory: /assets/correcao_monetaria/data
           commit-message: See ORIGIN_COMMIT from $GITHUB_REF

@@ -2,7 +2,7 @@ name: python-script
 
 on:
   schedule:
-    - cron: '0 4 * * */2,*/4' # Runs at 00:00 UTC everyday
+    - cron: "0 4 * * */2,*/4" # Runs at 00:00 UTC everyday
 
 jobs:
   build:
@@ -11,14 +11,14 @@ jobs:
     steps:
       # Checkout the repository content to github runner.
       - name: checkout repo content
-        uses: actions/checkout@v2 
+        uses: actions/checkout@v2
 
       # Install the python needed
       - name: setup python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.8 
-      
+          python-version: 3.8
+
       # Install the packages needed
       - name: install python packages
         run: |
@@ -26,7 +26,7 @@ jobs:
           pip install -r requirements.txt
 
       # Run the run.py to get the latest data
-      # python ./src/update_tjsp_taxas.py      
+      # python ./src/update_tjsp_taxas.py
       - name: execute py script
         run: |
           python ./tjsp/update.py
@@ -38,15 +38,13 @@ jobs:
           git config --local user.name "GitHub Action"
           git add -A
           git commit -m "Update Data using GitAction" -a
-        
+
       # Git Push
       - name: push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.API_TOKEN_GITHUB }}
           branch: ${{ github.ref }}
-
-
 # References
 # https://github.community/t/how-to-setup-github-actions-to-run-my-python-script-on-schedule/18335/2
 # https://canovasjm.netlify.app/2020/11/29/github-actions-run-a-python-script-on-schedule-and-commit-changes/
