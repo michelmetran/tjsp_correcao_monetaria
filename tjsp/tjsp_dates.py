@@ -5,7 +5,7 @@
 import pandas as pd
 from pathlib import Path
 from datetime import datetime
-from tjsp_update import get_table
+from .tjsp_update import get_table
 
 
 def get_local_table():
