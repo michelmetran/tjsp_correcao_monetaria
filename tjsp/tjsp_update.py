@@ -42,7 +42,7 @@ class TJSP:
         self.create_list_small_tables()
         self.merge_tables()
         self.adjust_data()
-        self.adjust_date()
+        self.adjust_taxa()
         self.filter()
         self.clean()
 
@@ -181,7 +181,12 @@ class TJSP:
         df['data_ref'] = df['data'].dt.strftime('%Y-%m')
 
         # Drop
-        df.drop(['year', 'month', 'day'], axis=1, inplace=True, errors='ignore')
+        df.drop(
+            ['year', 'month', 'day'],
+            axis=1,
+            inplace=True,
+            errors='ignore',
+        )
 
         # Sortear
         df.sort_values('data', inplace=True)
@@ -189,7 +194,7 @@ class TJSP:
         # Results
         self.df = df
 
-    def adjust_date(self):
+    def adjust_taxa(self):
         df = self.df
         # Ajusta Taxa
         self.df['taxa_string'] = self.df['taxa']
@@ -207,7 +212,7 @@ class TJSP:
         )
         self.df = self.df[mask]
 
-        # 
+        #
         mask = self.df['taxa'].isnull()
         self.df = self.df[~mask]
 
