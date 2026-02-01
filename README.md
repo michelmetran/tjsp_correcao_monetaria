@@ -11,6 +11,8 @@ maneira facilitada, por meio de um servidor, com atualização periódica!
 
 <br>
 
+---
+
 ## Como Usar?
 
 O arquivo _.csv_ disponível no servidor é atualizado todas as terças-feiras e quintas, as 4h00 e fica disponível no
@@ -19,6 +21,8 @@ endereço a seguir:
 - <a href="https://gaemapiracicaba.github.io/assets/correcao_monetaria/data/tabela_debitos_judiciais.csv" target="_blank">https://gaemapiracicaba.github.io/assets/correcao_monetaria/data/tabela_debitos_judiciais.csv</a>
 
 <br>
+
+---
 
 ### _Google Spreadsheets_
 
@@ -36,6 +40,8 @@ conta _Google_.
 
 <br>
 
+---
+
 ### _Microsoft Excel_
 
 No _Microsoft Excel_ é possível também manter o arquivo atualizado em uma aba, por meio dos passos abaixo:
@@ -43,6 +49,8 @@ No _Microsoft Excel_ é possível também manter o arquivo atualizado em uma aba
 ![](./docs/imgs/excel.gif)
 
 <br>
+
+---
 
 ### Outros Formatos
 
@@ -54,6 +62,8 @@ Download *csv*</a>
 Download *pdf*</a>
 
 <br>
+
+---
 
 ### Python
 

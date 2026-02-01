@@ -1,10 +1,8 @@
 """
-
+ddddd
 """
 
-
-
-from paths import *
+from paths import data_path
 from datetime import datetime
 import tjsp_update as tjsp
 
@@ -25,6 +23,3 @@ df.to_csv(
     index=False,
     decimal=',',
 )
-
-
-
