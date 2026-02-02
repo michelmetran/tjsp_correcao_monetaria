@@ -2,9 +2,11 @@
 ddddd
 """
 
-from paths import data_path
 from datetime import datetime
-import tjsp_update as tjsp
+
+from paths import data_path
+
+import tjsp.table as tjsp
 
 
 # Only to change
@@ -14,7 +16,7 @@ with open(data_path / 'date.txt', 'w') as f:
 
 
 # Create Dataframe
-df = tjsp.get_table()
+df = tjsp.TJSP()
 
 
 # Save "tabela_debitos_judiciais"

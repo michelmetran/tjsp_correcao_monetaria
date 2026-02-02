@@ -1,9 +1,10 @@
 [project]
 name = "tjsp"
 version = "0.1.0"
-description = "Add your description here"
+description = "Funções para obter e atualizar as taxas do TJSP, necessárias para cálculos de correção monetária dos débitos judiciais"
 readme = "README.md"
 requires-python = ">=3.11"
+keywords = ['débitos judiciais', 'correção monetária', 'tjsp', 'multas']
 dependencies = [
     "pandas>=2.0.0",
     # "requests>=2.32.5",
@@ -12,6 +13,9 @@ dependencies = [
 ]
 
 [dependency-groups]
-dev = [
-    "notebook>=7.5.3",
+dev = ["notebook>=7.5.3"]
+docs = [
+    "mkdocs>=1.6.1",
+    "mkdocs-jupyter>=0.25.1",
+    "mkdocs-material[imaging]>=9.7.1",
 ]

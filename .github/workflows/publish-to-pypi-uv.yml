@@ -1,0 +1,42 @@
+name: Publish Python to PyPI
+
+on: push
+
+jobs:
+    build-n-publish:
+        name: Build and Publish Python Poetry🐍 distributions 📦 to PyPI
+
+        runs-on: ubuntu-latest
+
+        steps:
+            # https://github.com/actions/checkout
+            - name: Check out repository
+              uses: actions/checkout@v4
+
+            # https://github.com/astral-sh/setup-uv
+            - name: Install uv
+              uses: astral-sh/setup-uv@v5
+
+            # https://github.com/actions/setup-python
+            - name: Set up Python
+              uses: actions/setup-python@v5
+              with:
+                  python-version: "3.11"
+                  # python-version-file: '.python-version'
+
+            - name: Lock UV dependencies
+              run: uv lock
+
+            - name: Install the project
+              run: uv sync --locked --all-extras --dev
+
+            - name: Build
+              run: uv build
+
+            - name: Publish to PyPI (main)
+              if: github.ref == 'refs/heads/main'
+              run: uv publish -t ${{ secrets.PYPI_TOKEN }}
+
+            - name: Publish to PyPI Test
+              if: github.ref != 'refs/heads/main'
+              run: uv publish --index testpypi -t ${{ secrets.PYPI_TEST_TOKEN }}
