@@ -6,7 +6,7 @@ O [Tribunal de Justiça do Estado de São Paulo](https://www.tjsp.jus.br/) dispo
 
 <br>
 
-No início do projeto, em novembro de 2021, a tabela estava disponível na \_:
+No início do projeto, em novembro de 2021, a tabela estava disponível na _url_:
 
 - [https://www.tjsp.jus.br/Download/Tabelas/TabelaDebitosJudiciais.pdf](https://www.tjsp.jus.br/Download/Tabelas/TabelaDebitosJudiciais.pdf)
 
@@ -18,4 +18,4 @@ Especificamente, na [Tabela Prática de Atualização Monetária dos Débitos Ju
 
 <br>
 
-O repositório [correcao_monetaria](https://github.com/michelmetran/correcao_monetaria) objetivou criar uma função para converter esse arquivo _.pdf_ em formato tabular (_.csv_) e disponibilizar isso de maneira facilitada, por meio de um servidor, com atualização periódica!
+O repositório [tjsp_correcao_monetaria](https://github.com/michelmetran/tjsp_correcao_monetaria) objetivou criar uma função para converter esse arquivo _.pdf_ em formato tabular (_.csv_) e disponibilizar isso de maneira facilitada, por meio de um servidor, com atualização periódica!
