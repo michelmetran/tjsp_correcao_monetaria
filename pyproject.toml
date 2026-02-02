@@ -1,6 +1,6 @@
 [project]
 name = "tjsp_correcao_monetaria"
-version = "0.1.1"
+version = "0.1.2"
 description = "Funções para obter e atualizar as taxas do TJSP, necessárias para cálculos de correção monetária dos débitos judiciais"
 readme = "README.md"
 requires-python = ">=3.11"
